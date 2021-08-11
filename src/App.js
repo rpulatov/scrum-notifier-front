@@ -1,9 +1,11 @@
-
+import React from 'react';
+import './App.css';
+import './Layout1'
 
 function App() {
   return (
-  <div className='wrapper'>
-    <h1> React Test</h1>
+  <div className="App">
+    <SiderDemo/>
   </div>
   )
 }
