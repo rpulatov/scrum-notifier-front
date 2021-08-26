@@ -1,6 +1,6 @@
 import { Form, Input, Button, Checkbox } from 'antd';
 
-const Demo = () => {
+const Forma = () => {
   const onFinish = (values) => {
     console.log('Success:', values);
   };
@@ -13,10 +13,10 @@ const Demo = () => {
     <Form
       name="basic"
       labelCol={{
-        span: 8,
+        span: 5,
       }}
       wrapperCol={{
-        span: 16,
+        span: 18,
       }}
       initialValues={{
         remember: true,
@@ -25,12 +25,12 @@ const Demo = () => {
       onFinishFailed={onFinishFailed}
     >
       <Form.Item
-        label="Username"
+        label="Логин"
         name="username"
         rules={[
           {
             required: true,
-            message: 'Please input your username!',
+            message: 'Нужно ввести логин!',
           },
         ]}
       >
@@ -38,12 +38,12 @@ const Demo = () => {
       </Form.Item>
 
       <Form.Item
-        label="Password"
+        label="Пароль"
         name="password"
         rules={[
           {
             required: true,
-            message: 'Please input your password!',
+            message: 'Нужно ввести пароль!',
           },
         ]}
       >
@@ -55,24 +55,24 @@ const Demo = () => {
         valuePropName="checked"
         wrapperCol={{
           offset: 8,
-          span: 16,
+          span: 18,
         }}
       >
-        <Checkbox>Remember me</Checkbox>
+        <Checkbox>Запомнить меня</Checkbox>
       </Form.Item>
 
       <Form.Item
         wrapperCol={{
-          offset: 8,
-          span: 16,
+          offset: 10,
+          span: 18,
         }}
       >
         <Button type="primary" htmlType="submit">
-          Submit
+          Войти
         </Button>
       </Form.Item>
     </Form>
   );
 };
 
-ReactDOM.render(<Demo />, mountNode);
+export default Forma;

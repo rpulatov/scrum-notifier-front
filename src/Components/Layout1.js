@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
   DesktopOutlined,
@@ -10,7 +10,6 @@ import {
 } from '@ant-design/icons';
 
 const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
 
 class SiderDemo extends React.Component {
   state = {
@@ -29,22 +28,22 @@ class SiderDemo extends React.Component {
         <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <Menu.Item key="1" icon={<PieChartOutlined />}>
+            <Menu.Item key="1">
+              <Link to="/">Ссылка на Авторизацию</Link>
+            </Menu.Item>
+            <Menu.Item key="3" icon={<PieChartOutlined />}>
               Option 1
             </Menu.Item>
-            <Menu.Item key="2" icon={<DesktopOutlined />}>
+            <Menu.Item key="4" icon={<DesktopOutlined />}>
               Option 2
             </Menu.Item>
-            <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-              <Menu.Item key="3">Tom</Menu.Item>
-              <Menu.Item key="4">Bill</Menu.Item>
-              <Menu.Item key="5">Alex</Menu.Item>
-            </SubMenu>
-            <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-              <Menu.Item key="6">Team 1</Menu.Item>
-              <Menu.Item key="8">Team 2</Menu.Item>
-            </SubMenu>
-            <Menu.Item key="9" icon={<FileOutlined />}>
+            <Menu.Item key="5" icon={<UserOutlined />}>
+              User
+            </Menu.Item>
+            <Menu.Item key="6" icon={<TeamOutlined />}>
+              Team
+            </Menu.Item>
+            <Menu.Item key="7" icon={<FileOutlined />}>
               Files
             </Menu.Item>
           </Menu>
@@ -57,7 +56,7 @@ class SiderDemo extends React.Component {
               <Breadcrumb.Item>Bill</Breadcrumb.Item>
             </Breadcrumb>
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-              Bill is a cat.
+              Тут должен быть контент
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
@@ -67,4 +66,4 @@ class SiderDemo extends React.Component {
   }
 }
 
-ReactDOM.render(<SiderDemo />, mountNode);
+export default SiderDemo;
